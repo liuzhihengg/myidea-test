@@ -13,6 +13,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 
+import static javabase.portal.IpDatabaseItemsFetcher.COOKIE;
+
 public class DisableIpDatabase {
 
     private static final String URL =
@@ -21,11 +23,11 @@ public class DisableIpDatabase {
 
     private static final Map<String, String> HEADERS = Map.of(
             "Content-Type", "application/json",
-            "Cookie", ""
+            "Cookie", COOKIE
     );
 
     public static void main(String[] args) throws Exception {
-        List<JsonNode> items = IpDatabaseItemsFetcher.fetch();
+        List<JsonNode> items = IpDatabaseItemsFetcher.fetch(APP_CODE, "默认prod配置");
         HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();

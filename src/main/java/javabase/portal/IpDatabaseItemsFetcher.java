@@ -29,7 +29,7 @@ public class IpDatabaseItemsFetcher {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(fetch());
+        System.out.println(JsonUtil.toJson(fetch()));
     }
 
     public static List<JsonNode> fetch() throws Exception {
