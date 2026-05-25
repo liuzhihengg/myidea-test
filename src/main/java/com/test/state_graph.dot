@@ -1,0 +1,16 @@
+strict digraph DiskGraph {
+node [shape=box,style=rounded]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+-948133126541378064 [label="/\\ temp = <<0, 0>>\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReadA\", \"ReadA\">>",style = filled]
+-948133126541378064 -> -6030138661669659032 [label="ReadA(1)",color="black",fontcolor="black"];
+-6030138661669659032 [label="/\\ temp = <<100, 0>>\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"WriteA\", \"ReadA\">>",tooltip="/\\ temp = <<100, 0>>\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"WriteA\", \"ReadA\">>"];
+-948133126541378064 -> 7931745202445566635 [label="ReadA(2)",color="black",fontcolor="black"];
+7931745202445566635 [label="/\\ temp = <<0, 100>>\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReadA\", \"WriteA\">>",tooltip="/\\ temp = <<0, 100>>\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReadA\", \"WriteA\">>"];
+-6030138661669659032 -> 2469477731585572261 [label="WriteA(1)",color="black",fontcolor="black"];
+2469477731585572261 [label="/\\ temp = <<100, 0>>\n/\\ accountA = 50\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReadB\", \"ReadA\">>",tooltip="/\\ temp = <<100, 0>>\n/\\ accountA = 50\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReadB\", \"ReadA\">>"];
+{rank = same; -948133126541378064;}
+{rank = same; -6030138661669659032;}
+}
+}

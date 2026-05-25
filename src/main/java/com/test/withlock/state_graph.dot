@@ -1,0 +1,41 @@
+strict digraph DiskGraph {
+node [shape=box,style=rounded]
+nodesep=0.35;
+subgraph cluster_graph {
+color="white";
+9032571290250459573 [label="/\\ tempA = <<0, 0>>\n/\\ tempB = <<0, 0>>\n/\\ lock = 0\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"GetLock\">>",style = filled]
+9032571290250459573 -> -3084436741115202257 [label="GetLock(1)",color="black",fontcolor="black"];
+-3084436741115202257 [label="/\\ tempA = <<0, 0>>\n/\\ tempB = <<0, 0>>\n/\\ lock = 1\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"DoTransfer\", \"GetLock\">>",tooltip="/\\ tempA = <<0, 0>>\n/\\ tempB = <<0, 0>>\n/\\ lock = 1\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"DoTransfer\", \"GetLock\">>"];
+9032571290250459573 -> 3087019317227780368 [label="GetLock(2)",color="black",fontcolor="black"];
+3087019317227780368 [label="/\\ tempA = <<0, 0>>\n/\\ tempB = <<0, 0>>\n/\\ lock = 2\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"DoTransfer\">>",tooltip="/\\ tempA = <<0, 0>>\n/\\ tempB = <<0, 0>>\n/\\ lock = 2\n/\\ accountA = 100\n/\\ accountB = 100\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"DoTransfer\">>"];
+-3084436741115202257 -> -589648171012699108 [label="DoTransfer(1)",color="black",fontcolor="black"];
+-589648171012699108 [label="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 1\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReleaseLock\", \"GetLock\">>",tooltip="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 1\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReleaseLock\", \"GetLock\">>"];
+3087019317227780368 -> 4339130011870946485 [label="DoTransfer(2)",color="black",fontcolor="black"];
+4339130011870946485 [label="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 2\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"ReleaseLock\">>",tooltip="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 2\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"ReleaseLock\">>"];
+-589648171012699108 -> 1295890859576536459 [label="ReleaseLock(1)",color="black",fontcolor="black"];
+1295890859576536459 [label="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 0\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"GetLock\">>",tooltip="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 0\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"GetLock\">>"];
+4339130011870946485 -> -2840410345777351558 [label="ReleaseLock(2)",color="black",fontcolor="black"];
+-2840410345777351558 [label="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 0\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"Done\">>",tooltip="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 0\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"GetLock\", \"Done\">>"];
+1295890859576536459 -> 4496160108371934474 [label="GetLock(2)",color="black",fontcolor="black"];
+4496160108371934474 [label="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 2\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"DoTransfer\">>",tooltip="/\\ tempA = <<100, 0>>\n/\\ tempB = <<100, 0>>\n/\\ lock = 2\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"DoTransfer\">>"];
+-2840410345777351558 -> -4802880846074088059 [label="GetLock(1)",color="black",fontcolor="black"];
+-4802880846074088059 [label="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 1\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"DoTransfer\", \"Done\">>",tooltip="/\\ tempA = <<0, 100>>\n/\\ tempB = <<0, 100>>\n/\\ lock = 1\n/\\ accountA = 50\n/\\ accountB = 150\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"DoTransfer\", \"Done\">>"];
+4496160108371934474 -> -2654758367509077037 [label="DoTransfer(2)",color="black",fontcolor="black"];
+-2654758367509077037 [label="/\\ tempA = <<100, 50>>\n/\\ tempB = <<100, 150>>\n/\\ lock = 2\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"ReleaseLock\">>",tooltip="/\\ tempA = <<100, 50>>\n/\\ tempB = <<100, 150>>\n/\\ lock = 2\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"ReleaseLock\">>"];
+-4802880846074088059 -> 2238203124038252284 [label="DoTransfer(1)",color="black",fontcolor="black"];
+2238203124038252284 [label="/\\ tempA = <<50, 100>>\n/\\ tempB = <<150, 100>>\n/\\ lock = 1\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReleaseLock\", \"Done\">>",tooltip="/\\ tempA = <<50, 100>>\n/\\ tempB = <<150, 100>>\n/\\ lock = 1\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"ReleaseLock\", \"Done\">>"];
+-2654758367509077037 -> 26300211795521197 [label="ReleaseLock(2)",color="black",fontcolor="black"];
+26300211795521197 [label="/\\ tempA = <<100, 50>>\n/\\ tempB = <<100, 150>>\n/\\ lock = 0\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"Done\">>",tooltip="/\\ tempA = <<100, 50>>\n/\\ tempB = <<100, 150>>\n/\\ lock = 0\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"Done\">>"];
+2238203124038252284 -> -4268013896353646989 [label="ReleaseLock(1)",color="black",fontcolor="black"];
+-4268013896353646989 [label="/\\ tempA = <<50, 100>>\n/\\ tempB = <<150, 100>>\n/\\ lock = 0\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"Done\">>",tooltip="/\\ tempA = <<50, 100>>\n/\\ tempB = <<150, 100>>\n/\\ lock = 0\n/\\ accountA = 0\n/\\ accountB = 200\n/\\ amount = <<50, 50>>\n/\\ pc = <<\"Done\", \"Done\">>"];
+26300211795521197 -> 26300211795521197 [label="Terminating",color="black",fontcolor="black"];
+-4268013896353646989 -> -4268013896353646989 [label="Terminating",color="black",fontcolor="black"];
+{rank = same; 9032571290250459573;}
+{rank = same; 3087019317227780368;-3084436741115202257;}
+{rank = same; -589648171012699108;4339130011870946485;}
+{rank = same; -2840410345777351558;1295890859576536459;}
+{rank = same; -4802880846074088059;4496160108371934474;}
+{rank = same; 2238203124038252284;-2654758367509077037;}
+{rank = same; 26300211795521197;-4268013896353646989;}
+}
+}

@@ -1,0 +1,1 @@
+JMH S 31 javabase.bytebuddyagent.MyBench S 62 javabase.bytebuddyagent.jmh_generated.MyBench_baseline_jmhTest S 8 baseline S 11 AverageTime E A 1 1 1 E I 1 5 T 6 500 ms E I 1 8 T 6 500 ms E I 1 1 E E E E E M 1 12 instrumented 2 16 mBQYAwGAzBQZAA== 16 0BgcAUHAlBA===== U 11 NANOSECONDS E E 

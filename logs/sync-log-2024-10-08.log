@@ -1,0 +1,41 @@
+2024-10-08 16:55:11 INFO  com.example.DemoApplication - Starting DemoApplication using Java 11.0.11 on liuzhihengdeMacBook-Pro.local with PID 41796 (/Users/tiaojiheng/study/java/myidea-test/target/classes started by tiaojiheng in /Users/tiaojiheng/study/java/myidea-test)
+2024-10-08 16:55:11 DEBUG com.example.DemoApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+2024-10-08 16:55:11 INFO  com.example.DemoApplication - No active profile set, falling back to default profiles: default
+2024-10-08 16:55:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08 16:55:12 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2024-10-08 16:55:12 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2024-10-08 16:55:12 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2024-10-08 16:55:12 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2024-10-08 16:55:12 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+2024-10-08 16:55:12 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2024-10-08 16:55:12 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 914 ms
+2024-10-08 16:55:12 INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2024-10-08 16:55:12 INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2024-10-08 16:55:12 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: No application config found or it's not a valid config! Please add <dubbo:application name="..." /> to your spring config.
+	at org.apache.dubbo.config.utils.ConfigValidationUtils.validateApplicationConfig(ConfigValidationUtils.java:471)
+	at org.apache.dubbo.config.utils.DefaultConfigValidator.validate(DefaultConfigValidator.java:47)
+	at org.apache.dubbo.config.context.AbstractConfigManager.checkDefaultAndValidateConfigs(AbstractConfigManager.java:588)
+	at org.apache.dubbo.config.context.ConfigManager.checkConfigs(ConfigManager.java:280)
+	at org.apache.dubbo.config.context.ConfigManager.loadConfigs(ConfigManager.java:261)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.loadApplicationConfigs(DefaultApplicationDeployer.java:225)
+	at org.apache.dubbo.config.deploy.DefaultApplicationDeployer.initialize(DefaultApplicationDeployer.java:195)
+	at org.apache.dubbo.config.deploy.DefaultModuleDeployer.prepare(DefaultModuleDeployer.java:479)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.initDubboConfigBeans(DubboConfigApplicationListener.java:73)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.onApplicationEvent(DubboConfigApplicationListener.java:59)
+	at org.apache.dubbo.config.spring.context.DubboConfigApplicationListener.onApplicationEvent(DubboConfigApplicationListener.java:37)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.context.support.AbstractApplicationContext.registerListeners(AbstractApplicationContext.java:881)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:580)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:338)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1332)
+	at com.example.DemoApplication.main(DemoApplication.java:20)
