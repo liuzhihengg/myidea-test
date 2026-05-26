@@ -19,7 +19,7 @@ public class DisableIpDatabase {
 
     private static final String URL =
             "https://portal.corp.qunar.com/applist/app/v2/conf/disable_ip_account";
-    private static final String APP_CODE = "f_tts_policy_provider";
+    private static final String APP_CODE = "f_tts_rt_policy";
 
     private static final Map<String, String> HEADERS = Map.of(
             "Content-Type", "application/json",
